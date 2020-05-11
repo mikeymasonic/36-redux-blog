@@ -1,6 +1,6 @@
-export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
 export const createComment = (comment, index) => ({
-  type: CREATE_COMMENT,
+  type: ADD_COMMENT,
   payload: comment, index
 });
 
