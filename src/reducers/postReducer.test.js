@@ -1,4 +1,4 @@
-import { addPost, deletePost } from '../actions/postActions';
+import { addPost, deletePost, updatePost } from '../actions/postActions';
 import reducer from './postReducer';
 
 describe('posts reducer', () => {
@@ -19,7 +19,33 @@ describe('posts reducer', () => {
     ]);
   });
 
-  it('handles the DELETE_DOG action', () => {
+  it('handles the UPDATE_POST action', () => {
+    const state = [
+      {
+        title: 'how I overcame my crippling fear of react',
+        body: 'Just kidding, it\'s still there'
+      },
+      {
+        title: 'being a JS developer in a post pandemic world',
+        body: 'same stuff, just way more stress'
+      }
+    ];
+    const action = updatePost(1, 'This is a new title', 'This is a new body');
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual([
+      {
+        title: 'how I overcame my crippling fear of react',
+        body: 'Just kidding, it\'s still there'
+      },
+      {
+        title: 'This is a new title',
+        body: 'This is a new body'
+      }
+    ]);
+  });
+
+  it('handles the DELETE_POST action', () => {
     const state = [
       {
         title: 'how I overcame my crippling fear of react',
