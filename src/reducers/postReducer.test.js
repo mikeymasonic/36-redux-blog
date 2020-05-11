@@ -6,7 +6,7 @@ describe('posts reducer', () => {
     const state = [];
     const action = addPost({
       title: 'how I overcame my crippling fear of react',
-      post: 'Just kidding, it\'s still there'
+      body: 'Just kidding, it\'s still there'
     });
 
     const newState = reducer(state, action);
@@ -14,7 +14,7 @@ describe('posts reducer', () => {
     expect(newState).toEqual([
       {
         title: 'how I overcame my crippling fear of react',
-        post: 'Just kidding, it\'s still there'
+        body: 'Just kidding, it\'s still there'
       }
     ]);
   });
@@ -23,7 +23,7 @@ describe('posts reducer', () => {
     const state = [
       {
         title: 'how I overcame my crippling fear of react',
-        post: 'Just kidding, it\'s still there'
+        body: 'Just kidding, it\'s still there'
       }
     ];
 
