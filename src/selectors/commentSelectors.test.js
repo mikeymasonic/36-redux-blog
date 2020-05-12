@@ -1,4 +1,4 @@
-import { getComments } from './commentSelectors';
+import { getComments, getAllComments } from './commentSelectors';
 
 describe('commentSelectors tests', () => {
   it('gets a comment by the post index', () => {
