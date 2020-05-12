@@ -12,12 +12,10 @@ export default function reducer(state = initialState, action) {
         }
         return comments;
       });
-      
+
     case DELETE_COMMENT:
-      return { ...state, comments: { ...state.comments, [action.payload.index]: [
-        ...state.comments[action.payload.index].slice(0, action.payload.index),
-        ...state.comments[action.payload.index].slice(action.payload.index + 1)
-      ] } };
+      return state.filter((_, i) => i !== action.payload);
+
     default:
       return state;
   }
